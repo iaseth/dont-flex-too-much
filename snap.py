@@ -21,7 +21,7 @@ def get_file_content(filepath):
 def get_mdx_content(snippet):
 	mdx = ""
 	mdx += f"\n{snippet['html']}\n\n"
-	mdx += f"\n<style>\n{snippet['css']}\n</style>\n\n"
+	# mdx += f"\n<style>\n{snippet['css']}\n</style>\n\n"
 	mdx += f"\n```html\n{snippet['html']}\n```\n\n"
 	mdx += f"\n```css\n{snippet['css']}\n```\n\n"
 	return mdx
