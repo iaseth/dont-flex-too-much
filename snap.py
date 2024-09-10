@@ -132,6 +132,7 @@ def get_tutorial(tutorial_name):
 		css = get_file_content(os.path.join(snippet_dirpath, "styles.css")) or css
 
 		snippet["name"] = snippet_name
+		snippet["className"] = f"snippet-{snippet_name}"
 		snippet["html"] = html
 		snippet["css"] = css
 		snippet["header"] = get_file_content(os.path.join(snippet_dirpath, "header.md"))
@@ -142,6 +143,7 @@ def get_tutorial(tutorial_name):
 
 	tutorial = {}
 	tutorial["name"] = tutorial_name
+	tutorial["className"] = f"tutorial-{tutorial_name}"
 	tutorial["meta"] = meta
 	tutorial["snippets"] = snippets
 
