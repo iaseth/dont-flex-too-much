@@ -18,7 +18,7 @@ const geistMono = localFont({
 	weight: "100 900",
 });
 
-export function HeaderLink ({
+function HeaderLink ({
 	title, href
 }: { title: string, href: string }) {
 	return (

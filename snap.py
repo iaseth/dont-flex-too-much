@@ -23,7 +23,12 @@ TUTORIAL_NAMES = [
 	'grids',
 	'tables',
 	'backgrounds',
-	'fonts',
+	'text-and-fonts',
+	'colors',
+	'borders-and-outlines',
+	'shadows',
+	'transforms',
+	'animations',
 ]
 
 
