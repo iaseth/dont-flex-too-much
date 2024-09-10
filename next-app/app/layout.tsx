@@ -36,7 +36,7 @@ export default function RootLayout({
 					<p className="p3">A tutorial on CSS Flexbox and Grid.</p>
 				</header>
 
-				<main>{children}</main>
+				{children}
 
 				<footer className="bg-zinc-950 text-white px-2 py-24 text-center">
 					<h4>
