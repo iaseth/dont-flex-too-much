@@ -28,3 +28,4 @@ dist-ssr
 
 tsconfig.*.tsbuildinfo
 src/App/snippets.json
+src/App/snippets.scss
