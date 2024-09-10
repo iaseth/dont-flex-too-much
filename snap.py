@@ -8,6 +8,11 @@ MDX_DIRPATH = "src/App/snippets"
 
 PRODUCE_MDX_CONTENT = False
 
+SNIPPET_NAMES = [
+	'flex',
+	'grid'
+]
+
 
 def get_file_content(filepath):
 	if not os.path.isfile(filepath):
@@ -34,14 +39,10 @@ def get_mdx_content(snippet):
 
 
 def main():
-	filenames = os.listdir(SNIPPETS_DIRPATH)
-	html_filenames = [x for x in filenames if x.endswith('.html')]
-	html_filenames.sort()
-
 	snippets = []
 	snippets_scss = ""
-	for html_filename in html_filenames:
-		code_name = html_filename[:-5]
+	for code_name in SNIPPET_NAMES:
+		html_filename = f"{code_name}.html"
 		css_filename = f"{code_name}.css"
 		json_filename = f"{code_name}.json"
 
