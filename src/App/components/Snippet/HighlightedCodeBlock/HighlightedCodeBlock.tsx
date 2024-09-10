@@ -9,16 +9,23 @@ SyntaxHighlighter.registerLanguage('xml', xml);
 SyntaxHighlighter.registerLanguage('css', css);
 
 interface HighlightedCodeBlockProps {
+	heading: string,
 	code: string,
 	language: string
 }
 
 export default function HighlightedCodeBlock ({
-	code, language
+	heading, code, language
 }: HighlightedCodeBlockProps) {
 	return (
 		<section>
-			<SyntaxHighlighter language={language} style={codeStyle}>{code}</SyntaxHighlighter>
+			<header className='bg-zinc-800 px-4 pt-1'>
+				<h3>{heading}</h3>
+			</header>
+
+			<section>
+				<SyntaxHighlighter language={language} style={codeStyle}>{code}</SyntaxHighlighter>
+			</section>
 		</section>
 	);
 }
