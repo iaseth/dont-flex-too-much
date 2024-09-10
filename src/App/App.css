@@ -22,6 +22,10 @@ body {
 	@apply bg-zinc-900 text-zinc-300;
 }
 
+.container {
+	@apply max-w-5xl mx-auto px-4;
+}
+
 pre {
 	@apply px-3 py-3 bg-zinc-950;
 }
