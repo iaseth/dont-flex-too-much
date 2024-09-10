@@ -1,4 +1,5 @@
 import snippetsJson from '../snippets.json';
+import tutorialsJson from '../tutorials.json';
 
 
 
@@ -11,4 +12,14 @@ export interface SnippetDS {
 	}
 }
 
+export interface TutorialDS {
+	meta: {
+		snippets: string[]
+	},
+
+	name: string,
+	snippets: SnippetDS[]
+}
+
 export const snippets: SnippetDS[] = snippetsJson.snippets;
+export const tutorials: TutorialDS[] = tutorialsJson.tutorials;

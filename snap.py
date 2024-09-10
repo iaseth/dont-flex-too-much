@@ -89,7 +89,7 @@ def snippet_stuff():
 	jo['snippets'] = snippets
 	snippets_json_path = os.path.join(OUTPUT_DIRPATH, "snippets.json")
 	with open(snippets_json_path, 'w') as f:
-		json.dump(jo, f, indent="\t")
+		json.dump(jo, f, indent="\t", sort_keys=True)
 	print(f"Saved: {snippets_json_path} ({len(snippets)} snippets)")
 
 	snippets_scss_path = os.path.join(OUTPUT_DIRPATH, "snippets.scss")
@@ -131,6 +131,7 @@ def get_tutorial(tutorial_name):
 		html = get_file_content(os.path.join(snippet_dirpath, "snippet.html")) or html
 		css = get_file_content(os.path.join(snippet_dirpath, "styles.css")) or css
 
+		snippet["name"] = snippet_name
 		snippet["html"] = html
 		snippet["css"] = css
 		snippet["header"] = get_file_content(os.path.join(snippet_dirpath, "header.md"))
@@ -140,6 +141,7 @@ def get_tutorial(tutorial_name):
 		snippets.append(snippet)
 
 	tutorial = {}
+	tutorial["name"] = tutorial_name
 	tutorial["meta"] = meta
 	tutorial["snippets"] = snippets
 
@@ -161,7 +163,7 @@ def tutorial_stuff():
 	jo['tutorials'] = tutorials
 	tutorials_json_path = os.path.join(OUTPUT_DIRPATH, "tutorials.json")
 	with open(tutorials_json_path, 'w') as f:
-		json.dump(jo, f, indent="\t")
+		json.dump(jo, f, indent="\t", sort_keys=True)
 	print(f"Saved: {tutorials_json_path} ({len(tutorials)} tutorials)")
 
 
