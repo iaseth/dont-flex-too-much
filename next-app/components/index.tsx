@@ -1,2 +1,2 @@
 
-export {default as Snippet} from './Snippet/Snippet';
+export { default as Tutorial } from './Tutorial/Tutorial';
