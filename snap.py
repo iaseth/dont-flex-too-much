@@ -18,12 +18,16 @@ def get_file_content(filepath):
 	return content
 
 
+def wrap_inside_section(html, tag="section"):
+	return f"\n<{tag}>\n{html}\n</{tag}>\n\n"
+
+
 def get_mdx_content(snippet):
 	mdx = ""
-	mdx += f"\n{snippet['html']}\n\n"
+	mdx += wrap_inside_section(snippet['html'])
 	# mdx += f"\n<style>\n{snippet['css']}\n</style>\n\n"
-	mdx += f"\n```html\n{snippet['html']}\n```\n\n"
-	mdx += f"\n```css\n{snippet['css']}\n```\n\n"
+	mdx += wrap_inside_section(f"```html\n{snippet['html']}\n```")
+	mdx += wrap_inside_section(f"```css\n{snippet['css']}\n```")
 	return mdx
 
 
