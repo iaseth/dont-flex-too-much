@@ -16,6 +16,11 @@ SNIPPET_NAMES = [
 	'grid'
 ]
 
+TUTORIAL_NAMES = [
+	'flexbox',
+	'grid'
+]
+
 
 def get_file_content(filepath):
 	if not os.path.isfile(filepath):
@@ -41,7 +46,7 @@ def get_mdx_content(snippet):
 	return mdx
 
 
-def main():
+def snippet_stuff():
 	snippets = []
 	snippets_scss = ""
 	for code_name in SNIPPET_NAMES:
@@ -91,6 +96,78 @@ def main():
 	with open(snippets_scss_path, 'w') as f:
 		f.write(snippets_scss)
 	print(f"Saved: {snippets_scss_path} ({len(snippets)} snippets)")
+
+
+def get_tutorial(tutorial_name):
+	print(f"Tutorial: {tutorial_name}")
+	tutorial_dirpath = os.path.join("tutorials", tutorial_name)
+	if not os.path.isdir(tutorial_dirpath):
+		print(f"\tNot found: '{tutorial_dirpath}'")
+		return
+
+	print(f"\tFound: '{tutorial_dirpath}'")
+	tutorial_json_path = os.path.join(tutorial_dirpath, f"{tutorial_name}.json")
+	if not os.path.isfile(tutorial_json_path):
+		print(f"\tNot found: '{tutorial_json_path}'")
+		return
+
+	print(f"\tFound: '{tutorial_json_path}'")
+	with open(tutorial_json_path) as f:
+		meta = json.load(f)
+
+	print(f"\tParsed: '{tutorial_json_path}' ({len(meta['snippets'])} snippets)")
+
+	snippets = []
+	for snippet_name in meta['snippets']:
+		print(f"\t\tSnippet: '{snippet_name}'")
+		snippet_dirpath = os.path.join(tutorial_dirpath, snippet_name)
+		if not os.path.isdir(snippet_dirpath):
+			print(f"\t\tNot found: '{snippet_dirpath}'")
+			continue
+
+		print(f"\t\tFound: '{snippet_dirpath}'")
+
+		snippet = {}
+		html = get_file_content(os.path.join(snippet_dirpath, "snippet.html")) or html
+		css = get_file_content(os.path.join(snippet_dirpath, "styles.css")) or css
+
+		snippet["html"] = html
+		snippet["css"] = css
+		snippet["header"] = get_file_content(os.path.join(snippet_dirpath, "header.md"))
+		snippet["footer"] = get_file_content(os.path.join(snippet_dirpath, "footer.md"))
+		snippet["meta"] = json.loads(get_file_content(os.path.join(snippet_dirpath, "meta.json")))
+
+		snippets.append(snippet)
+
+	tutorial = {}
+	tutorial["meta"] = meta
+	tutorial["snippets"] = snippets
+
+	return tutorial
+
+
+def tutorial_stuff():
+	tutorials = []
+	for tutorial_name in TUTORIAL_NAMES:
+		tutorial = get_tutorial(tutorial_name)
+		if not tutorial:
+			print(f"\tSomething went wrong with tutorial: '{tutorial_name}'")
+			continue
+
+		tutorials.append(tutorial)
+		print(f"\tAdded tutorial: '{tutorial_name}'")
+
+	jo = {}
+	jo['tutorials'] = tutorials
+	tutorials_json_path = os.path.join(OUTPUT_DIRPATH, "tutorials.json")
+	with open(tutorials_json_path, 'w') as f:
+		json.dump(jo, f, indent="\t")
+	print(f"Saved: {tutorials_json_path} ({len(tutorials)} tutorials)")
+
+
+def main():
+	# snippet_stuff()
+	tutorial_stuff()
 
 
 if __name__ == '__main__':

@@ -31,5 +31,6 @@ tsconfig.*.tsbuildinfo
 src/App/snippets.json
 src/App/snippets.scss
 
+next-app/tutorials.json
 next-app/snippets.json
 next-app/snippets.scss
