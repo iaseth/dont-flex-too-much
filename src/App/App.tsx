@@ -1,4 +1,5 @@
 import './App.css';
+import './snippets.css';
 
 import { red } from 'redicons';
 import rediconsJson from './redicons.json';
