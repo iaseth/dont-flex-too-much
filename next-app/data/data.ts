@@ -10,9 +10,10 @@ export interface SnippetDS {
 	name: string,
 	className: string,
 
+	header: string,
 	html: string,
 	css: string,
-	header: string,
+	styles: string,
 	footer: string
 }
 
