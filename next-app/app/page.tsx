@@ -1,12 +1,18 @@
 import { TutorialDS, tutorials } from "@/data";
+import { Metadata } from "next";
 import Link from "next/link";
 
 
 
+export const metadata: Metadata = {
+	title: "Dont Flex Too Much",
+	description: "A tutorial on CSS Flexbox and Grid.",
+};
+
 function TutorialLink ({ tutorial }: { tutorial: TutorialDS }) {
 	return (
-		<Link href={tutorial.name} className="block px-8 py-8 bg-zinc-950 border-2 border-transparent rounded duration-300 hover:border-red-500">
-			<div className="H6">{tutorial.meta.title}</div>
+		<Link href={tutorial.name} className="block px-8 py-8 bg-zinc-950 border-2 border-transparent rounded duration-300 hover:border-purple-600">
+			<div className="H6 red-text">{tutorial.meta.title}</div>
 			<p className="p3">{tutorial.meta.description}</p>
 		</Link>
 	);
@@ -15,8 +21,13 @@ function TutorialLink ({ tutorial }: { tutorial: TutorialDS }) {
 export default function Home() {
 
 	return (
-		<main className="min-h-screen py-24">
-			<section className="container-xs grid gap-x-3 gap-y-8">
+		<main className="min-h-screen py-12 pb-32">
+			<header className="px-4 py-6 text-center">
+				<h1 className="H4 blue-text">Dont Flex Too Much</h1>
+				<p>My notes on CSS.</p>
+			</header>
+
+			<section className="container-xs space-y-16 py-12">
 				{tutorials.map((tutorial, k) => <TutorialLink key={k} tutorial={tutorial} />)}
 			</section>
 		</main>
