@@ -1,4 +1,4 @@
-// import snippetsJson from '../snippets.json';
+import snippetsJson from '../snippets.json';
 
 
 
@@ -11,4 +11,4 @@ export interface SnippetDS {
 	}
 }
 
-// export const snippets: SnippetDS[] = snippetsJson.snippets;
+export const snippets: SnippetDS[] = snippetsJson.snippets;
