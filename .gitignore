@@ -27,3 +27,4 @@ dist-ssr
 .netlify
 
 tsconfig.*.tsbuildinfo
+src/App/snippets.json
