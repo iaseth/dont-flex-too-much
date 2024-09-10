@@ -29,6 +29,10 @@ body {
 	@apply max-w-5xl mx-auto px-6;
 }
 
+.container-xs {
+	@apply max-w-xl mx-auto px-6;
+}
+
 .container-sm {
 	@apply max-w-3xl mx-auto px-6;
 }

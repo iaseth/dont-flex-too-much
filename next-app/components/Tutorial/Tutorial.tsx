@@ -12,8 +12,8 @@ export default function Tutorial ({
 }: TutorialProps) {
 	return (
 		<article>
-			<header>
-				<h1>Tutorial {tutorial.name}</h1>
+			<header className="container-sm text-center">
+				<h1>Tutorial on {tutorial.name}</h1>
 			</header>
 
 			<section>
