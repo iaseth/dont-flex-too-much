@@ -1,6 +1,8 @@
 import json
 import os
 
+import sass
+
 
 
 SNIPPETS_DIRPATH = "snippets"
@@ -135,6 +137,10 @@ def get_tutorial(tutorial_name):
 		snippet["className"] = f"snippet-{snippet_name}"
 		snippet["html"] = html
 		snippet["css"] = css
+
+		scss = f".{snippet['className']} {{ {css} }}"
+		snippet["styles"] = sass.compile(string=scss)
+
 		snippet["header"] = get_file_content(os.path.join(snippet_dirpath, "header.md"))
 		snippet["footer"] = get_file_content(os.path.join(snippet_dirpath, "footer.md"))
 		snippet["meta"] = json.loads(get_file_content(os.path.join(snippet_dirpath, "meta.json")))
