@@ -1,4 +1,5 @@
 import { SnippetDS } from "../../data";
+import HighlightedCodeBlock from "./HighlightedCodeBlock/HighlightedCodeBlock";
 
 
 
@@ -18,13 +19,8 @@ export default function Snippet ({
 			<section className="container font-mono grid gap-3 lg:grid-cols-3">
 				<section id={snippet.name} className="px-2 py-2 bg-zinc-950 border border-pink-500" dangerouslySetInnerHTML={{__html: snippet.html}}></section>
 
-				<section>
-					<pre>{snippet.html}</pre>
-				</section>
-
-				<section>
-					<pre>{snippet.css}</pre>
-				</section>
+				<HighlightedCodeBlock language="html" code={snippet.html} />
+				<HighlightedCodeBlock language="css" code={snippet.css} />
 			</section>
 		</section>
 	);
