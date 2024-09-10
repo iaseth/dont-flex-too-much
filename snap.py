@@ -108,7 +108,7 @@ def get_tutorial(tutorial_name):
 		return
 
 	print(f"\tFound: '{tutorial_dirpath}'")
-	tutorial_json_path = os.path.join(tutorial_dirpath, f"{tutorial_name}.json")
+	tutorial_json_path = os.path.join(tutorial_dirpath, "tutorials.json")
 	if not os.path.isfile(tutorial_json_path):
 		print(f"\tNot found: '{tutorial_json_path}'")
 		return
