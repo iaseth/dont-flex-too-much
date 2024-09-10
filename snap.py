@@ -43,9 +43,11 @@ def main():
 	for html_filename in html_filenames:
 		code_name = html_filename[:-5]
 		css_filename = f"{code_name}.css"
+		json_filename = f"{code_name}.json"
 
 		html_filepath = os.path.join(SNIPPETS_DIRPATH, html_filename)
 		css_filepath = os.path.join(SNIPPETS_DIRPATH, css_filename)
+		json_filepath = os.path.join(SNIPPETS_DIRPATH, json_filename)
 
 		print(f"Codename: {code_name}")
 		print(f"\tHTML: {html_filepath}")
@@ -55,6 +57,8 @@ def main():
 		snippet['name'] = code_name
 		snippet['html'] = get_file_content(html_filepath)
 		snippet['css'] = get_file_content(css_filepath)
+		with open(json_filepath) as f:
+			snippet['meta'] = json.load(f)
 		snippets.append(snippet)
 		print(f"\t\tAdded '{code_name}' snippet to JSON.")
 
