@@ -54,10 +54,13 @@ def main():
 		print(f"\tHTML: {html_filepath}")
 		print(f"\t CSS: {css_filepath}")
 
+		html = get_file_content(html_filepath) or html
+		css = get_file_content(css_filepath)
+
 		snippet = {}
 		snippet['name'] = code_name
-		snippet['html'] = get_file_content(html_filepath)
-		snippet['css'] = get_file_content(css_filepath)
+		snippet['html'] = html
+		snippet['css'] = css
 		with open(json_filepath) as f:
 			snippet['meta'] = json.load(f)
 		snippets.append(snippet)
