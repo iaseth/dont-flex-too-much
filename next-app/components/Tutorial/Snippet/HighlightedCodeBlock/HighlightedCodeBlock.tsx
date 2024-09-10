@@ -11,15 +11,17 @@ SyntaxHighlighter.registerLanguage('css', css);
 interface HighlightedCodeBlockProps {
 	heading: string,
 	code: string,
-	language: string
+	language: string,
+	headerBg?: string
 }
 
 export default function HighlightedCodeBlock ({
-	heading, code, language
+	heading, code, language,
+	headerBg="bg-zinc-800"
 }: HighlightedCodeBlockProps) {
 	return (
 		<section>
-			<header className='bg-zinc-800 px-4 pt-1'>
+			<header className={`px-4 pt-1 ${headerBg}`}>
 				<h3>{heading}</h3>
 			</header>
 

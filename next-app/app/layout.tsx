@@ -39,7 +39,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-				<header className="container-xs text-center grid grid-cols-3 gap-x-4">
+				<header className="container-sm text-center grid grid-cols-3 gap-x-4">
 					<HeaderLink title="Home" href="/" />
 					<HeaderLink title="Author" href="https://github.com/iaseth" />
 					<HeaderLink title="Code" href="https://github.com/iaseth/dont-flex-too-much" />
