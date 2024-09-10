@@ -4,7 +4,7 @@ import os
 
 
 SNIPPETS_DIRPATH = "snippets"
-MDX_DIRPATH = "src/App/snippets"
+MDX_DIRPATH = "vite-app/src/App/snippets"
 
 PRODUCE_MDX_CONTENT = False
 
@@ -79,12 +79,12 @@ def main():
 
 	jo = {}
 	jo['snippets'] = snippets
-	snippets_json_path = "src/App/snippets.json"
+	snippets_json_path = "vite-app/src/App/snippets.json"
 	with open(snippets_json_path, 'w') as f:
 		json.dump(jo, f, indent="\t")
 	print(f"Saved: {snippets_json_path} ({len(snippets)} snippets)")
 
-	snippets_scss_path = "src/App/snippets.scss"
+	snippets_scss_path = "vite-app/src/App/snippets.scss"
 	with open(snippets_scss_path, 'w') as f:
 		f.write(snippets_scss)
 	print(f"Saved: {snippets_scss_path} ({len(snippets)} snippets)")
