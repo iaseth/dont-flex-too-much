@@ -39,7 +39,7 @@ def main():
 	html_filenames.sort()
 
 	snippets = []
-	snippets_css = ""
+	snippets_scss = ""
 	for html_filename in html_filenames:
 		code_name = html_filename[:-5]
 		css_filename = f"{code_name}.css"
@@ -58,7 +58,8 @@ def main():
 		snippets.append(snippet)
 		print(f"\t\tAdded '{code_name}' snippet to JSON.")
 
-		snippets_css += f"\n{snippet['css']}\n"
+		scss = f"\n#{code_name} {{\n{snippet['css']}\n}}\n"
+		snippets_scss += scss
 
 		if PRODUCE_MDX_CONTENT:
 			mdx_filename = f"{code_name}.mdx"
@@ -75,10 +76,10 @@ def main():
 		json.dump(jo, f, indent="\t")
 	print(f"Saved: {snippets_json_path} ({len(snippets)} snippets)")
 
-	snippets_css_path = "src/App/snippets.css"
-	with open(snippets_css_path, 'w') as f:
-		f.write(snippets_css)
-	print(f"Saved: {snippets_css_path} ({len(snippets)} snippets)")
+	snippets_scss_path = "src/App/snippets.scss"
+	with open(snippets_scss_path, 'w') as f:
+		f.write(snippets_scss)
+	print(f"Saved: {snippets_scss_path} ({len(snippets)} snippets)")
 
 
 if __name__ == '__main__':
