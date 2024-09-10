@@ -18,7 +18,7 @@ export default function App () {
 		<div className="bg-zinc-900 text-white">
 			<Header />
 
-			<main className="min-h-screen pb-24">
+			<main className="min-h-screen py-12 pb-24">
 				{snippets.map((snippet, k) => <Snippet key={k} snippet={snippet} />)}
 			</main>
 

@@ -10,10 +10,15 @@ interface SnippetProps {
 export default function Snippet ({
 	snippet
 }: SnippetProps) {
+	const target = `${snippet.name}-section`;
+
 	return (
-		<section className="bg-gradient-to-b from-zinc-900 via-zinc-950/50 to-zinc-900 py-6">
+		<section id={target} className="bg-gradient-to-b from-zinc-900 via-zinc-950/50 to-zinc-900 py-6">
 			<header className="container-sm text-left py-6">
-				<h1 className="H4">{snippet.meta.heading}</h1>
+				<h1 className="H4">
+					<a className="mr-4 opacity-30" href={`#${target}`}>#</a>
+					<span>{snippet.meta.heading}</span>
+				</h1>
 				<p>This is just come text. This is just come text. This is just come text. This is just come text. This is just come text. This is just come text. This is just come text. This is just come text.</p>
 			</header>
 
