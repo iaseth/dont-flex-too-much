@@ -14,13 +14,16 @@ OUTPUT_DIRPATH = "next-app"
 PRODUCE_MDX_CONTENT = False
 
 SNIPPET_NAMES = [
-	'flex',
+	'flexbox',
 	'grid'
 ]
 
 TUTORIAL_NAMES = [
 	'flexbox',
-	'grid'
+	'grids',
+	'tables',
+	'backgrounds',
+	'fonts',
 ]
 
 
@@ -108,7 +111,7 @@ def get_tutorial(tutorial_name):
 		return
 
 	print(f"\tFound: '{tutorial_dirpath}'")
-	tutorial_json_path = os.path.join(tutorial_dirpath, "tutorials.json")
+	tutorial_json_path = os.path.join(tutorial_dirpath, "tutorial.json")
 	if not os.path.isfile(tutorial_json_path):
 		print(f"\tNot found: '{tutorial_json_path}'")
 		return
