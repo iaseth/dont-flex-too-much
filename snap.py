@@ -46,9 +46,9 @@ def main():
 		css_filename = f"{code_name}.css"
 		json_filename = f"{code_name}.json"
 
-		html_filepath = os.path.join(SNIPPETS_DIRPATH, html_filename)
-		css_filepath = os.path.join(SNIPPETS_DIRPATH, css_filename)
-		json_filepath = os.path.join(SNIPPETS_DIRPATH, json_filename)
+		html_filepath = os.path.join(SNIPPETS_DIRPATH, code_name, html_filename)
+		css_filepath = os.path.join(SNIPPETS_DIRPATH, code_name, css_filename)
+		json_filepath = os.path.join(SNIPPETS_DIRPATH, code_name, json_filename)
 
 		print(f"Codename: {code_name}")
 		print(f"\tHTML: {html_filepath}")
