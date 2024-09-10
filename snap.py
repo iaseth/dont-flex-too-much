@@ -20,6 +20,8 @@ def get_file_content(filepath):
 def main():
 	filenames = os.listdir(SNIPPETS_DIRPATH)
 	html_filenames = [x for x in filenames if x.endswith('.html')]
+	html_filenames.sort()
+
 	snippets = []
 	for html_filename in html_filenames:
 		code_name = html_filename[:-5]
