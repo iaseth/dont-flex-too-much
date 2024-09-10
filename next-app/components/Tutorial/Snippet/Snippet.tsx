@@ -13,7 +13,7 @@ export default function Snippet ({
 	return (
 		<section id={snippet.className} className="bg-gradient-to-b from-zinc-900 via-zinc-950/50 to-zinc-900 py-6">
 			<header className="container-sm text-left py-6">
-				<h1 className="H4">
+				<h1 className="H5">
 					<a className="mr-4 opacity-30" href={`#${snippet.className}`}>#</a>
 					<span>{snippet.meta.heading}</span>
 				</h1>

@@ -19,6 +19,8 @@ export interface SnippetDS {
 
 export interface TutorialDS {
 	meta: {
+		title: string,
+		description: string,
 		snippets: string[]
 	},
 

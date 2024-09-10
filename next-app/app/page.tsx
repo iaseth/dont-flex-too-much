@@ -5,8 +5,9 @@ import Link from "next/link";
 
 function TutorialLink ({ tutorial }: { tutorial: TutorialDS }) {
 	return (
-		<Link href={tutorial.name} className="block px-6 py-6 bg-zinc-950 border-2 border-transparent rounded duration-300 hover:border-red-500">
-			<div className="h1">{tutorial.name}</div>
+		<Link href={tutorial.name} className="block px-8 py-8 bg-zinc-950 border-2 border-transparent rounded duration-300 hover:border-red-500">
+			<div className="H6">{tutorial.meta.title}</div>
+			<p className="p3">{tutorial.meta.description}</p>
 		</Link>
 	);
 }

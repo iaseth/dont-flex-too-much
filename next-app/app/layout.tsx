@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 
 import "./globals.css";
+import Link from "next/link";
 
 
 
@@ -30,9 +31,11 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-				<header className="bg-red-500 text-white px-2 py-16 text-center">
-					<h1 className="H6">Dont Flex Too Much</h1>
-					<p className="p3">A tutorial on CSS Flexbox and Grid.</p>
+				<header className="bg-zinc-950 text-white px-2 py-16 text-center">
+					<Link href="/">
+						<h1 className="H6 red-text">Dont Flex Too Much</h1>
+						<p className="p3">A tutorial on CSS Flexbox and Grid.</p>
+					</Link>
 				</header>
 
 				{children}

@@ -12,8 +12,9 @@ export default function Tutorial ({
 }: TutorialProps) {
 	return (
 		<article>
-			<header className="container-sm text-center">
-				<h1>Tutorial on {tutorial.name}</h1>
+			<header className="container-sm text-center py-8">
+				<h1 className="H4 blue-text">{tutorial.meta.title}</h1>
+				<p className="p2">{tutorial.meta.description}</p>
 			</header>
 
 			<section>
