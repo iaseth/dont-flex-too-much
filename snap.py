@@ -6,6 +6,8 @@ import os
 SNIPPETS_DIRPATH = "snippets"
 MDX_DIRPATH = "src/App/snippets"
 
+PRODUCE_MDX_CONTENT = False
+
 
 def get_file_content(filepath):
 	if not os.path.isfile(filepath):
@@ -40,11 +42,9 @@ def main():
 	for html_filename in html_filenames:
 		code_name = html_filename[:-5]
 		css_filename = f"{code_name}.css"
-		mdx_filename = f"{code_name}.mdx"
 
 		html_filepath = os.path.join(SNIPPETS_DIRPATH, html_filename)
 		css_filepath = os.path.join(SNIPPETS_DIRPATH, css_filename)
-		mdx_filepath = os.path.join(MDX_DIRPATH, mdx_filename)
 
 		print(f"Codename: {code_name}")
 		print(f"\tHTML: {html_filepath}")
@@ -56,10 +56,14 @@ def main():
 		snippet['css'] = get_file_content(css_filepath)
 		snippets.append(snippet)
 		print(f"\t\tAdded '{code_name}' snippet to JSON.")
-		mdx = get_mdx_content(snippet)
-		with open(mdx_filepath, "w") as f:
-			f.write(mdx)
-		print(f"\t\tSaved: {mdx_filepath}")
+
+		if PRODUCE_MDX_CONTENT:
+			mdx_filename = f"{code_name}.mdx"
+			mdx_filepath = os.path.join(MDX_DIRPATH, mdx_filename)
+			mdx = get_mdx_content(snippet)
+			with open(mdx_filepath, "w") as f:
+				f.write(mdx)
+			print(f"\t\tSaved: {mdx_filepath}")
 
 	jo = {}
 	jo['snippets'] = snippets
