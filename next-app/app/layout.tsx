@@ -45,7 +45,7 @@ export default function RootLayout({
 					<HeaderLink title="Code" href="https://github.com/iaseth/dont-flex-too-much" />
 				</header>
 
-				{children}
+				<main className="min-h-screen">{children}</main>
 
 				<footer className="bg-zinc-950 text-white px-2 py-24 text-center">
 					<h4>
