@@ -1,4 +1,4 @@
-import { Header } from "@/components";
+import { Hero } from "@/components";
 import { TutorialDS, tutorials } from "@/data";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -19,11 +19,11 @@ function TutorialLink ({ tutorial }: { tutorial: TutorialDS }) {
 	);
 }
 
-export default function Home() {
+export default function Home () {
 
 	return (
 		<>
-			<Header title="Dont Flex Too Much" description="My notes on CSS." />
+			<Hero title="Dont Flex Too Much" description="My notes on CSS." />
 
 			<section className="container-sm space-y-16">
 				{tutorials.map((tutorial, k) => <TutorialLink key={k} tutorial={tutorial} />)}
