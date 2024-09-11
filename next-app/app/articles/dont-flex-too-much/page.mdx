@@ -1,8 +1,15 @@
+import { Snippet } from "@/components";
+import { getTutorial, getSnippet } from "@/data";
+
+
+
+export const tutorial = getTutorial('flex');
 
 export const metadata = {
 	title: "Let it go",
 	description: "A tutorial on CSS Flexbox and Grid.",
 };
+
 
 
 # Hello World
@@ -13,4 +20,4 @@ This is just some text.
 This is just some text.
 This is just some text.
 
-
+<Snippet snippet={getSnippet(tutorial, "foo")} />

@@ -32,3 +32,11 @@ export interface TutorialDS {
 
 export const allTutorials: TutorialDS[] = tutorialsJson.tutorials;
 export const tutorials: TutorialDS[] = allTutorials.filter(t => t.meta.publish);
+
+export function getTutorial (name: string): TutorialDS {
+	return tutorials.find(t => t.name === name) || tutorials[0];
+}
+
+export function getSnippet (tutorial: TutorialDS, name: string): SnippetDS {
+	return tutorial.snippets.find(s => s.name === name) || tutorial.snippets[0];
+}
