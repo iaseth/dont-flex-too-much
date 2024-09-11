@@ -1,3 +1,4 @@
+import { Header } from "@/components";
 import { TutorialDS, tutorials } from "@/data";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -22,10 +23,7 @@ export default function Home() {
 
 	return (
 		<main className="min-h-screen py-12 pb-32">
-			<header className="px-4 py-8 text-center">
-				<h1 className="H4 blue-text">Dont Flex Too Much</h1>
-				<p>My notes on CSS.</p>
-			</header>
+			<Header title="Dont Flex Too Much" description="My notes on CSS." />
 
 			<section className="container-sm space-y-16 py-12">
 				{tutorials.map((tutorial, k) => <TutorialLink key={k} tutorial={tutorial} />)}

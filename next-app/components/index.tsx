@@ -1,3 +1,3 @@
 
-export { default as Tutorial } from './Tutorial/Tutorial';
-export { default as Snippet } from './Tutorial/Snippet/Snippet';
+export { default as Header } from './Header/Header';
+export { default as Snippet } from './Snippet/Snippet';
