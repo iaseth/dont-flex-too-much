@@ -22,12 +22,12 @@ function TutorialLink ({ tutorial }: { tutorial: TutorialDS }) {
 export default function Home() {
 
 	return (
-		<main className="min-h-screen pb-32">
+		<>
 			<Header title="Dont Flex Too Much" description="My notes on CSS." />
 
 			<section className="container-sm space-y-16">
 				{tutorials.map((tutorial, k) => <TutorialLink key={k} tutorial={tutorial} />)}
 			</section>
-		</main>
+		</>
 	);
 }

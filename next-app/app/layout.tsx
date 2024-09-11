@@ -1,22 +1,9 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 
 import "./globals.css";
 import Link from "next/link";
 
 
-
-const geistSans = localFont({
-	src: "./fonts/GeistVF.woff",
-	variable: "--font-geist-sans",
-	weight: "100 900",
-});
-
-const geistMono = localFont({
-	src: "./fonts/GeistMonoVF.woff",
-	variable: "--font-geist-mono",
-	weight: "100 900",
-});
 
 function HeaderLink ({
 	title, href
@@ -38,14 +25,14 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+			<body>
 				<header className="container-sm text-center grid grid-cols-3 gap-x-4">
 					<HeaderLink title="Home" href="/" />
 					<HeaderLink title="Author" href="https://github.com/iaseth" />
 					<HeaderLink title="Code" href="https://github.com/iaseth/dont-flex-too-much" />
 				</header>
 
-				<main className="min-h-screen">{children}</main>
+				<main className="min-h-screen pb-32">{children}</main>
 
 				<footer className="bg-zinc-950 text-white px-2 py-24 text-center">
 					<h4>
