@@ -18,19 +18,6 @@ SNIPPET_NAMES = [
 	'grid'
 ]
 
-TUTORIAL_NAMES = [
-	'flexbox',
-	'grids',
-	'tables',
-	'backgrounds',
-	'text-and-fonts',
-	'colors',
-	'borders-and-outlines',
-	'shadows',
-	'transforms',
-	'animations',
-]
-
 
 def get_file_content(filepath):
 	if not os.path.isfile(filepath):
@@ -165,6 +152,7 @@ def get_tutorial(tutorial_name):
 
 
 def tutorial_stuff():
+	TUTORIAL_NAMES = os.listdir("tutorials")
 	tutorials = []
 	for tutorial_name in TUTORIAL_NAMES:
 		tutorial = get_tutorial(tutorial_name)
