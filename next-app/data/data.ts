@@ -10,11 +10,9 @@ export interface SnippetDS {
 	name: string,
 	className: string,
 
-	header: string,
 	html: string,
 	css: string,
-	styles: string,
-	footer: string
+	styles: string
 }
 
 export interface TutorialDS {
