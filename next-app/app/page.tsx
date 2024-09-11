@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 function TutorialLink ({ tutorial }: { tutorial: TutorialDS }) {
 	return (
-		<Link href={tutorial.name} className="block px-8 py-8 bg-zinc-950 border-2 border-transparent rounded duration-300 hover:border-purple-600">
+		<Link href={`articles/${tutorial.name}`} className="block px-8 py-8 bg-zinc-950 border-2 border-transparent rounded duration-300 hover:border-purple-600">
 			<div className="H6 red-text">{tutorial.meta.title}</div>
 			<p className="p3">{tutorial.meta.description}</p>
 		</Link>
@@ -22,10 +22,10 @@ function TutorialLink ({ tutorial }: { tutorial: TutorialDS }) {
 export default function Home() {
 
 	return (
-		<main className="min-h-screen py-12 pb-32">
+		<main className="min-h-screen pb-32">
 			<Header title="Dont Flex Too Much" description="My notes on CSS." />
 
-			<section className="container-sm space-y-16 py-12">
+			<section className="container-sm space-y-16">
 				{tutorials.map((tutorial, k) => <TutorialLink key={k} tutorial={tutorial} />)}
 			</section>
 		</main>
