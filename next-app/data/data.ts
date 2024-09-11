@@ -21,6 +21,7 @@ export interface TutorialDS {
 	meta: {
 		title: string,
 		description: string,
+		publish?: boolean,
 		snippets: string[]
 	},
 
@@ -29,4 +30,5 @@ export interface TutorialDS {
 	snippets: SnippetDS[]
 }
 
-export const tutorials: TutorialDS[] = tutorialsJson.tutorials;
+export const allTutorials: TutorialDS[] = tutorialsJson.tutorials;
+export const tutorials: TutorialDS[] = allTutorials.filter(t => t.meta.publish);

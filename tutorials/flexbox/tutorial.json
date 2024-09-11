@@ -1,5 +1,6 @@
 {
 	"title": "All about Flexbox",
 	"description": "All about Flexbox and CSS properties related to Flexbox",
+	"publish": true,
 	"snippets": ["flex", "grid"]
 }
